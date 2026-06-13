@@ -11,11 +11,11 @@ const roadmapData = [
         courseUrl: "https://www.coursera.org/learn/usability-evaluation-ux-design",
         problemSolved: "The 'Looks Nice But Doesn't Work' Syndrome. Replaces design opinions with objective human cognitive laws.",
         studyDays: {
-            hours: 24,
+            hours: 20,
             description: "Deep dive into human cognitive processing limitations, mental models, visual processing patterns, and system feedback paradigms. Memorize and extract the mechanics behind Nielsen’s 10 Usability Heuristics."
         },
         doDays: {
-            hours: 24,
+            hours: 22,
             description: "Choose a highly broken, complex live platform. Conduct an industry-grade Heuristic Evaluation, mapping every single page interface against cognitive laws and writing a detailed violation severity brief."
         }
     },
@@ -26,11 +26,11 @@ const roadmapData = [
         courseUrl: "https://www.figma.com/resource-library/design-basics/",
         problemSolved: "Broken Responsiveness & Dev Friction. Replaces arbitrary resizing with rigid mathematical containers.",
         studyDays: {
-            hours: 24,
+            hours: 20,
             description: "Master the Figma auto-layout engine, nested constraints, spatial grids (4px/8px), absolute positioning within layouts, min/max widths, and responsive text wrapping."
         },
         doDays: {
-            hours: 24,
+            hours: 22,
             description: "Take 3 highly complex web pages (e.g., Salesforce Dashboard, Airbnb Search, Slack UI). Deconstruct and rebuild them in Figma using a single master container with fluid auto-layout structures."
         }
     },
@@ -41,11 +41,11 @@ const roadmapData = [
         courseUrl: "https://www.coursera.org/learn/user-research-methods",
         problemSolved: "Designing for Yourself, Not the User. Removes internal bias to unveil genuine user needs.",
         studyDays: {
-            hours: 24,
+            hours: 20,
             description: "Learn non-leading interview techniques, open-ended question structures, user recruitment filters, cognitive bias in moderation, and ethnographic field study methods."
         },
         doDays: {
-            hours: 24,
+            hours: 22,
             description: "Draft a user research protocol for a custom application concept. Conduct 3 semi-structured moderated interviews. Synthesize the raw audio/transcripts into a thematic affinity map and user persona."
         }
     },
@@ -56,11 +56,11 @@ const roadmapData = [
         courseUrl: "https://www.coursera.org/learn/information-architecture-ux",
         problemSolved: "User Getting Lost. Replaces disorganized lists with structured information taxonomy.",
         studyDays: {
-            hours: 24,
+            hours: 20,
             description: "Study mental categorization paradigms, card sorting theory (open vs. closed), tree testing methodologies, flat vs. deep navigation hierarchies, and user search patterns."
         },
         doDays: {
-            hours: 24,
+            hours: 22,
             description: "Audit and restructure the navigation of a complex e-commerce or directory website. Deliver a revised site taxonomy tree, user task flows, and write a summary of a run closed tree test."
         }
     },
@@ -71,11 +71,11 @@ const roadmapData = [
         courseUrl: "https://www.figma.com/resource-library/variables/",
         problemSolved: "Component Bloat & Maintenance Nightmares. Unifies elements through variables and variant properties.",
         studyDays: {
-            hours: 24,
+            hours: 20,
             description: "Understand Figma design variables, modes (light/dark/spacing), component variants, component properties, text overrides, component swapping, and nested instance overrides."
         },
         doDays: {
-            hours: 24,
+            hours: 22,
             description: "Build a scalable, production-grade text input field system. Consolidate default, hover, active, error, disabled, helper text, and left/right icon states into a single component using properties."
         }
     },
@@ -86,11 +86,11 @@ const roadmapData = [
         courseUrl: "https://www.figma.com/resource-library/prototyping/",
         problemSolved: "Static & Soulless Experiences. Connects pages through motion to preserve spatial context.",
         studyDays: {
-            hours: 24,
+            hours: 20,
             description: "Learn cognitive load of transition, timing functions (ease-in, ease-out, custom cubic-bezier), smart animate triggers, delay looping, dragging gestures, and choreographing multiple page elements."
         },
         doDays: {
-            hours: 24,
+            hours: 22,
             description: "Create an interactive application prototype featuring animated sidebar navigation, skeleton loading screens, success check animation, toast notifications, and slider controllers."
         }
     },
@@ -101,11 +101,11 @@ const roadmapData = [
         courseUrl: "https://www.coursera.org/learn/usability-testing-ux-design",
         problemSolved: "Guessing Success Metrics. Replaces qualitative guesses with clear benchmarks.",
         studyDays: {
-            hours: 24,
+            hours: 20,
             description: "Study the System Usability Scale (SUS), Single Ease Question (SEQ), Task Completion Rate (TCR), Time on Task (ToT), and error rates."
         },
         doDays: {
-            hours: 24,
+            hours: 22,
             description: "Run moderated usability tests on Week 6 prototype. Test 3 users, compute overall SUS score, map Task Completion Rates, and detail a task-by-task usability issue severity log."
         }
     },
@@ -116,11 +116,11 @@ const roadmapData = [
         courseUrl: "https://www.coursera.org/learn/quantitative-user-experience-research",
         problemSolved: "Blind Iterations. Uses live behavioral telemetry to steer design modifications.",
         studyDays: {
-            hours: 24,
+            hours: 20,
             description: "Study A/B testing principles, statistical significance, heatmaps, scrollmaps, user session recording analysis, conversion funnels, and click-through rates."
         },
         doDays: {
-            hours: 24,
+            hours: 22,
             description: "Audit a live conversion funnel. Draft a detailed A/B test proposal: state the null/alternative hypotheses, design the wireframe variant, and map out the analytics event tracking schema."
         }
     },
@@ -131,11 +131,11 @@ const roadmapData = [
         courseUrl: "https://www.figma.com/resource-library/design-systems/",
         problemSolved: "Visual Inconsistency. Standardizes design language into a single source of truth.",
         studyDays: {
-            hours: 24,
+            hours: 20,
             description: "Study design system scaling, tokens hierarchy (global/primitive vs. semantic alias vs. component override), dark mode logic, multi-brand themes, and component governance."
         },
         doDays: {
-            hours: 24,
+            hours: 20,
             description: "Construct a complete design system for a mobile application including semantic variables, type scales, buttons, inputs, headers, and grid containers, featuring both Light and Dark mode variables."
         }
     },
@@ -146,11 +146,11 @@ const roadmapData = [
         courseUrl: "https://learn.microsoft.com/en-us/training/paths/accessibility-fundamentals/",
         problemSolved: "Designs That Die in Dev. Ensures visual mockups match high-performance, accessible code.",
         studyDays: {
-            hours: 24,
+            hours: 20,
             description: "Study Web Content Accessibility Guidelines (WCAG 2.2AA/AAA), color contrast formulas, keyboard focus state design, screen reader header hierarchy, aria roles, and redlining specifications."
         },
         doDays: {
-            hours: 24,
+            hours: 20,
             description: "Run accessibility audit on Week 9 system. Annotate Figma design with absolute dev specs: spacing tokens, font weights, component properties, border radii, and exact keyboard focus flows."
         }
     }
