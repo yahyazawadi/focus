@@ -795,7 +795,7 @@ function getElapsedWorkdayHours(today) {
     let elapsedWorkdays = 0;
     let current = new Date(startClean);
     
-    while (current <= todayClean) {
+    while (current < todayClean) {
         const dayOfWeek = current.getDay(); // 0 = Sunday, 1 = Monday, ..., 5 = Friday, 6 = Saturday
         if (dayOfWeek !== 5 && dayOfWeek !== 6) { // Not Friday, not Saturday
             elapsedWorkdays++;
