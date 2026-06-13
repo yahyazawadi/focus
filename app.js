@@ -454,6 +454,9 @@ function loadFromLocalStorage() {
         }
     }
     
+    // Check if the streak is still valid before rendering
+    checkStreakValidity();
+    
     // Apply theme on load
     document.documentElement.setAttribute('data-theme', state.currentTheme);
     document.getElementById('theme-select').value = state.currentTheme;
@@ -839,6 +842,22 @@ function updateOverallStats() {
     generateCompletedLog();
 }
 
+function checkStreakValidity() {
+    if (state.lastActiveDate === null) return;
+    
+    const today = new Date().toDateString();
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yesterdayStr = yesterday.toDateString();
+    
+    // If the last active date is neither today nor yesterday, they missed a day; reset streak.
+    if (state.lastActiveDate !== today && state.lastActiveDate !== yesterday) {
+        state.streakCount = 0;
+        // Don't reset lastActiveDate yet; it will be overwritten when they next complete a task
+        saveToLocalStorage();
+    }
+}
+
 function updateStreakDate() {
     const today = new Date().toDateString();
     
@@ -853,9 +872,10 @@ function updateStreakDate() {
         if (state.lastActiveDate === yesterdayStr) {
             state.streakCount += 1;
             state.lastActiveDate = today;
-            showToast(`Awesome consistency! Streak extended to ${state.streakCount} days! 🔥`, 'success');
+            const suffix = state.streakCount === 1 ? 'day' : 'days';
+            showToast(`Awesome consistency! Streak extended to ${state.streakCount} ${suffix}! 🔥`, 'success');
         } else if (state.lastActiveDate !== today) {
-            // Streak broken
+            // Streak was broken or starting fresh today
             state.streakCount = 1;
             state.lastActiveDate = today;
         }
@@ -868,7 +888,8 @@ function updateStreakDate() {
 function updateStreakDisplay() {
     const streakElement = document.getElementById('streak-count');
     if (streakElement) {
-        streakElement.textContent = `🔥 ${state.streakCount} Days`;
+        const suffix = state.streakCount === 1 ? 'Day' : 'Days';
+        streakElement.textContent = `🔥 ${state.streakCount} ${suffix}`;
     }
 }
 
