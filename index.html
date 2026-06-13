@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="deep-space">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX APEX // 10-Week Advanced Design Roadmap</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Canvas for Confetti -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">▲</span>
+                    <span class="logo-text">UX <span class="accent-text">APEX</span></span>
+                </div>
+                <div class="subtitle">Advanced Design Studio</div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <button class="nav-btn active" data-tab="roadmap">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 12h18" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="12" cy="12" r="1"/>
+                    </svg>
+                    <span>Syllabus Roadmap</span>
+                </button>
+                <button class="nav-btn" data-tab="focus">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M12 2v2M12 20v2M2 12h2M20 12h2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Focus Studio</span>
+                    <span class="badge pulse" id="focus-active-badge">Active</span>
+                </button>
+                <button class="nav-btn" data-tab="stats">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 20V10M12 20V4M6 20v-6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Performance Stats</span>
+                </button>
+            </nav>
+
+            <!-- Progress Card in Sidebar -->
+            <div class="sidebar-progress-card">
+                <div class="progress-info">
+                    <span>Overall Progress</span>
+                    <span id="overall-percentage">0%</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="overall-progress-fill"></div>
+                </div>
+                <div class="progress-meta">
+                    <span id="completed-hours-text">0 / 480 Hours</span>
+                    <span id="completed-tasks-text">0 / 20 Tasks</span>
+                </div>
+            </div>
+
+            <!-- Theme Selector & Settings -->
+            <div class="sidebar-footer">
+                <div class="theme-selector-container">
+                    <label for="theme-select">Theme</label>
+                    <select id="theme-select" class="theme-dropdown">
+                        <option value="deep-space">Deep Space</option>
+                        <option value="nordic-clean">Nordic Clean</option>
+                        <option value="cyberpunk">Cyberpunk</option>
+                    </select>
+                </div>
+                <div class="developer-credit">
+                    Designed for UX Level-Up
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Panel -->
+        <main class="main-panel">
+            
+            <!-- TOP BAR -->
+            <header class="top-bar">
+                <div class="current-view-title">
+                    <h1 id="view-title">Syllabus Roadmap</h1>
+                    <p id="view-subtitle" class="text-muted">Master UX Design in 10 Weeks & 320 Study/Practice Hours</p>
+                </div>
+                <div class="quick-status">
+                    <div class="quick-stat">
+                        <span class="label">Streak</span>
+                        <span class="value" id="streak-count">🔥 0 Days</span>
+                    </div>
+                    <button class="quick-focus-toggle btn-primary" id="start-focus-shortcut">
+                        ⚡ Quick Focus
+                    </button>
+                </div>
+            </header>
+
+            <!-- TAB VIEWS -->
+            <div class="content-wrapper">
+                
+                <!-- VIEW 1: ROADMAP TIMELINE -->
+                <section id="tab-roadmap" class="tab-view active-view">
+                    <!-- Filters & Stats Row -->
+                    <div class="filters-row">
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-filter="all">All Weeks</button>
+                            <button class="filter-btn" data-filter="pending">Pending</button>
+                            <button class="filter-btn" data-filter="completed">Completed</button>
+                        </div>
+                        <div class="roadmap-summary-pills">
+                            <span class="summary-pill">📖 3 Days Study / Wk</span>
+                            <span class="summary-pill">🛠️ 3 Days Practice / Wk</span>
+                        </div>
+                    </div>
+
+                    <!-- Roadmap Weeks Grid -->
+                    <div class="weeks-timeline" id="weeks-container">
+                        <!-- Dynamic content loaded via JS -->
+                    </div>
+                </section>
+
+                <!-- VIEW 2: FOCUS STUDIO -->
+                <section id="tab-focus" class="tab-view">
+                    <div class="focus-grid">
+                        
+                        <!-- LEFT PANEL: TIMER & CONTROLS -->
+                        <div class="focus-card main-timer-card glass">
+                            <!-- Selected Task Banner -->
+                            <div class="focus-task-indicator" id="focus-task-display">
+                                <span class="tag">Active Task Focus</span>
+                                <h3 id="focus-active-title">No Task Selected</h3>
+                                <p id="focus-active-description" class="text-muted">Select a task checklist item from the roadmap to focus on it here.</p>
+                            </div>
+
+                            <!-- Visual Timer -->
+                            <div class="timer-display-container">
+                                <svg class="timer-progress-ring" viewBox="0 0 200 200">
+                                    <circle class="timer-ring-bg" cx="100" cy="100" r="90" />
+                                    <circle class="timer-ring-fill" id="timer-progress-fill" cx="100" cy="100" r="90" />
+                                </svg>
+                                <div class="timer-text-overlay">
+                                    <span class="timer-numbers" id="timer-clock">25:00</span>
+                                    <span class="timer-status" id="timer-mode">FOCUS SESSION</span>
+                                </div>
+                            </div>
+
+                            <!-- Timer Controls -->
+                            <div class="timer-controls">
+                                <button class="btn-timer-secondary" id="timer-prev" title="Reset current block">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M2.5 2v6h6M2.66 15.57a10 10 0 1 0-.57-8.38l.67-2.19" stroke-linecap="round"/>
+                                    </svg>
+                                </button>
+                                <button class="btn-timer-primary" id="timer-play-pause">
+                                    <span id="play-pause-icon">▶</span>
+                                </button>
+                                <button class="btn-timer-secondary" id="timer-skip" title="Skip to next session">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 4l10 8-10 8V4zM19 5v14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- Timer Preset Chooser -->
+                            <div class="timer-presets">
+                                <button class="preset-btn active" data-time="25" data-mode="focus">Focus (25m)</button>
+                                <button class="preset-btn" data-time="50" data-mode="focus">Deep Work (50m)</button>
+                                <button class="preset-btn" data-time="5" data-mode="break">Short Break (5m)</button>
+                                <button class="preset-btn" data-time="15" data-mode="break">Long Break (15m)</button>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT PANEL: FOCUS ENHANCEMENTS -->
+                        <div class="focus-side-panel">
+                            
+                            <!-- Ambient sound card -->
+                            <div class="focus-card sound-mixer-card glass">
+                                <h3>Ambient Focus Mixer</h3>
+                                <p class="card-desc">Programmatically synthesized soundscapes to isolate your attention.</p>
+                                
+                                <div class="sound-mixer-row">
+                                    <button class="sound-toggle-btn" id="sound-rain-btn">🌧️ Rain</button>
+                                    <input type="range" class="sound-slider" id="sound-rain-volume" min="0" max="1" step="0.05" value="0.5">
+                                </div>
+                                <div class="sound-mixer-row">
+                                    <button class="sound-toggle-btn" id="sound-white-btn">🌫️ White Noise</button>
+                                    <input type="range" class="sound-slider" id="sound-white-volume" min="0" max="1" step="0.05" value="0.3">
+                                </div>
+                                <div class="sound-mixer-row">
+                                    <button class="sound-toggle-btn" id="sound-waves-btn">🧘 Focus Hum</button>
+                                    <input type="range" class="sound-slider" id="sound-waves-volume" min="0" max="1" step="0.05" value="0.4">
+                                </div>
+                                <div class="sound-actions">
+                                    <button class="btn-secondary" id="stop-all-sounds">Mute All Sounds</button>
+                                </div>
+                            </div>
+
+                            <!-- Breathing helper card -->
+                            <div class="focus-card breathing-card glass">
+                                <h3>Guided Breathing</h3>
+                                <p class="card-desc">Align your focus. Follow the circle to regulate nervous system energy.</p>
+                                <div class="breathing-space">
+                                    <div class="breathing-ring" id="breathing-ring-element"></div>
+                                    <div class="breathing-text" id="breathing-status">Breath Control</div>
+                                </div>
+                                <div class="breathing-controls">
+                                    <button class="btn-primary" id="breathing-toggle">Start Breathing Guide</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Focus Space Bottom Inspiration -->
+                    <div class="focus-inspiration-banner glass">
+                        <div class="quote-symbol">“</div>
+                        <p class="quote-text" id="focus-quote">Design is not just what it looks like and feels like. Design is how it works.</p>
+                        <span class="quote-author" id="focus-author">— Steve Jobs</span>
+                    </div>
+                </section>
+
+                <!-- VIEW 3: PERFORMANCE STATS -->
+                <section id="tab-stats" class="tab-view">
+                    <div class="stats-grid">
+                        <div class="stat-card glass">
+                            <div class="stat-label">Total Time Completed</div>
+                            <div class="stat-value" id="stats-total-hours">0 Hours</div>
+                            <p class="stat-subtext">Out of 480 total estimated hours</p>
+                        </div>
+                        <div class="stat-card glass">
+                            <div class="stat-label">Task Completion Rate</div>
+                            <div class="stat-value" id="stats-completion-rate">0%</div>
+                            <p class="stat-subtext">Checked milestones vs. pending</p>
+                        </div>
+                        <div class="stat-card glass">
+                            <div class="stat-label">Weeks Fully Unlocked</div>
+                            <div class="stat-value" id="stats-weeks-unlocked">0 / 10</div>
+                            <p class="stat-subtext">All components finished for the week</p>
+                        </div>
+                        <div class="stat-card glass">
+                            <div class="stat-label">Custom Sub-tasks Done</div>
+                            <div class="stat-value" id="stats-custom-completed">0 Tasks</div>
+                            <p class="stat-subtext">Personal goals achieved in sandbox</p>
+                        </div>
+                    </div>
+
+                    <div class="stats-details-row">
+                        <!-- Left: Tasks Log -->
+                        <div class="stats-large-card glass">
+                            <h3>Completed Tasks Log</h3>
+                            <div class="completed-tasks-list" id="completed-log-list">
+                                <div class="empty-log-state">
+                                    <p class="text-muted">No tasks completed yet. Check tasks in your Syllabus to populate your archive!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Reset and Storage Manager -->
+                        <div class="stats-large-card glass settings-card">
+                            <h3>Workspace Control</h3>
+                            <p class="text-muted card-desc">Manage your local data storage state or start over.</p>
+                            
+                            <div class="control-box">
+                                <h4>Local Storage Operations</h4>
+                                <p class="text-muted small">Your progress, streak, notes, and timers are saved locally to your browser.</p>
+                                <div class="control-actions">
+                                    <button class="btn-secondary" id="export-data-btn">Backup Progress Data</button>
+                                    <button class="btn-danger" id="reset-data-btn">Reset All Course Data</button>
+                                </div>
+                            </div>
+
+                            <div class="control-box text-box">
+                                <h4>Study Motivation Insights</h4>
+                                <ul class="insights-list">
+                                    <li>🧑‍🎓 <strong>Self-taught edge:</strong> Fast-paced execution is powered by consistency. Dedicate specific blocks daily.</li>
+                                    <li>📐 <strong>Figma Track Mastery:</strong> Practice on Weeks 2, 5, 6, and 9 solves professional file scalability.</li>
+                                    <li>🎓 <strong>Michigan Tracks:</strong> Form a strong heuristic basis to explain the structural "why" to engineering teams.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Floating Toast Notification System -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- JS Link -->
+    <script src="app.js"></script>
+</body>
+</html>

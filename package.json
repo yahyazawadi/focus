@@ -1,0 +1,11 @@
+{
+  "name": "ux-design-roadmap",
+  "version": "1.0.0",
+  "description": "Interactive 10-Week Advanced UX Design Roadmap Tracker with Focus Mode, Pomodoro Timer, and Ambient Synthesizer",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server -p 3000"
+  },
+  "author": "UX APEX Team",
+  "license": "MIT"
+}
