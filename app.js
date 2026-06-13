@@ -958,21 +958,22 @@ function startTimer() {
     document.getElementById('timer-play-pause').innerHTML = '<span>⏸</span>';
     document.getElementById('focus-active-badge').style.display = 'block';
     
+    const durationMs = (state.timer.minutesRemaining * 60 + state.timer.secondsRemaining) * 1000;
+    state.timer.endTime = Date.now() + durationMs;
+    
     state.timer.timerInterval = setInterval(() => {
-        if (state.timer.secondsRemaining === 0) {
-            if (state.timer.minutesRemaining === 0) {
-                // Timer finished!
-                timerFinished();
-                return;
-            }
-            state.timer.minutesRemaining--;
-            state.timer.secondsRemaining = 59;
-        } else {
-            state.timer.secondsRemaining--;
-        }
+        const msRemaining = Math.max(0, state.timer.endTime - Date.now());
+        const totalSeconds = Math.round(msRemaining / 1000);
+        
+        state.timer.minutesRemaining = Math.floor(totalSeconds / 60);
+        state.timer.secondsRemaining = totalSeconds % 60;
         
         updateTimerDisplay();
-    }, 1000);
+        
+        if (totalSeconds <= 0) {
+            timerFinished();
+        }
+    }, 200);
     
     showToast('Focus session started! Deep focus mode active.', 'info');
 }
@@ -1132,6 +1133,39 @@ function toggleBreathing() {
     }
 }
 
+function updateTrainingCountdown() {
+    const countdownText = document.getElementById('training-countdown-text');
+    const badge = document.getElementById('training-days-badge');
+    if (!countdownText || !badge) return;
+    
+    const startDate = new Date('2026-06-20T00:00:00');
+    const endDate = new Date('2026-08-31T23:59:59');
+    const today = new Date();
+    
+    // Clear time parts for clean day difference math
+    const startClean = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
+    const endClean = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate());
+    const todayClean = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    
+    const oneDayMs = 24 * 60 * 60 * 1000;
+    
+    if (todayClean < startClean) {
+        const daysToStart = Math.round((startClean - todayClean) / oneDayMs);
+        badge.textContent = `Starts Soon`;
+        countdownText.textContent = `⏳ Starts in ${daysToStart} ${daysToStart === 1 ? 'day' : 'days'} (June 20)`;
+    } else if (todayClean > endClean) {
+        badge.textContent = `Completed`;
+        countdownText.textContent = `🎉 Training ended on August 31, 2026`;
+    } else {
+        const totalDurationDays = Math.round((endClean - startClean) / oneDayMs) + 1;
+        const elapsedDays = Math.round((todayClean - startClean) / oneDayMs) + 1;
+        const remainingDays = totalDurationDays - elapsedDays;
+        
+        badge.textContent = `Day ${elapsedDays} / ${totalDurationDays}`;
+        countdownText.textContent = `🏁 ${remainingDays} ${remainingDays === 1 ? 'day' : 'days'} remaining (ends Aug 31)`;
+    }
+}
+
 // --- DOM EVENT LISTENERS & INITS ---
 document.addEventListener('DOMContentLoaded', () => {
     
@@ -1139,6 +1173,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadFromLocalStorage();
     generateRoadmapUI();
     updateOverallStats();
+    updateTrainingCountdown();
     
     // Set random focus quote
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
