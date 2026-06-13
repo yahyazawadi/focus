@@ -780,24 +780,45 @@ function updateWeekPercentage(weekNum) {
     updateOverallStats();
 }
 
+function getElapsedWorkdayHours(today) {
+    const start = new Date('2026-06-20T00:00:00');
+    const end = new Date('2026-08-31T23:59:59');
+    
+    // Clear times for clean calendar date comparisons
+    const startClean = new Date(start.getFullYear(), start.getMonth(), start.getDate());
+    const endClean = new Date(end.getFullYear(), end.getMonth(), end.getDate());
+    const todayClean = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    
+    if (todayClean < startClean) return 0;
+    if (todayClean > endClean) return 416;
+    
+    let elapsedWorkdays = 0;
+    let current = new Date(startClean);
+    
+    while (current <= todayClean) {
+        const dayOfWeek = current.getDay(); // 0 = Sunday, 1 = Monday, ..., 5 = Friday, 6 = Saturday
+        if (dayOfWeek !== 5 && dayOfWeek !== 6) { // Not Friday, not Saturday
+            elapsedWorkdays++;
+        }
+        current.setDate(current.getDate() + 1);
+    }
+    
+    return Math.min(416, elapsedWorkdays * 8);
+}
+
 function updateOverallStats() {
-    let totalEstimatedHours = 0;
-    let completedHours = 0;
-    let totalTasksCount = 20; // 2 per week * 10 weeks
+    let totalEstimatedHours = 416; // Fixed total training hours
     let completedTasksCount = 0;
+    let totalTasksCount = 20; // 2 per week * 10 weeks
     
     roadmapData.forEach(item => {
-        totalEstimatedHours += item.studyDays.hours + item.doDays.hours;
-        
         const studyDone = state.checkedTasks[`w${item.week}_study`] === true;
         const doDone = state.checkedTasks[`w${item.week}_do`] === true;
         
         if (studyDone) {
-            completedHours += item.studyDays.hours;
             completedTasksCount++;
         }
         if (doDone) {
-            completedHours += item.doDays.hours;
             completedTasksCount++;
         }
     });
@@ -812,14 +833,17 @@ function updateOverallStats() {
     
     const overallPercentage = Math.round((completedTasksCount / totalTasksCount) * 100);
     
+    // Calculate elapsed real-time training hours
+    const elapsedHours = getElapsedWorkdayHours(new Date());
+    
     // Update Sidebar Elements
     document.getElementById('overall-percentage').textContent = `${overallPercentage}%`;
     document.getElementById('overall-progress-fill').style.width = `${overallPercentage}%`;
-    document.getElementById('completed-hours-text').textContent = `${completedHours} / ${totalEstimatedHours} Hours`;
+    document.getElementById('completed-hours-text').textContent = `${elapsedHours} / ${totalEstimatedHours} Hours`;
     document.getElementById('completed-tasks-text').textContent = `${completedTasksCount} / ${totalTasksCount} Tasks`;
     
     // Update Stats Tab Elements
-    document.getElementById('stats-total-hours').textContent = `${completedHours} Hours`;
+    document.getElementById('stats-total-hours').textContent = `${elapsedHours} Hours`;
     document.getElementById('stats-completion-rate').textContent = `${overallPercentage}%`;
     document.getElementById('stats-custom-completed').textContent = `${completedCustom} Tasks`;
     
