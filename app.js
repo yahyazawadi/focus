@@ -875,7 +875,7 @@ function checkStreakValidity() {
     const yesterdayStr = yesterday.toDateString();
     
     // If the last active date is neither today nor yesterday, they missed a day; reset streak.
-    if (state.lastActiveDate !== today && state.lastActiveDate !== yesterday) {
+    if (state.lastActiveDate !== today && state.lastActiveDate !== yesterdayStr) {
         state.streakCount = 0;
         // Don't reset lastActiveDate yet; it will be overwritten when they next complete a task
         saveToLocalStorage();
