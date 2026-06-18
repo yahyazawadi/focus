@@ -8,7 +8,7 @@ const roadmapData = [
         week: 1,
         title: "Usability Heuristics & Interface Deconstruction",
         course: "Usability Evaluation in UX Design (University of Michigan)",
-        courseUrl: "https://www.coursera.org/learn/usability-evaluation-ux-design",
+        courseUrl: "https://www.coursera.org/learn/introtoux-principles-and-processes",
         problemSolved: "The 'Looks Nice But Doesn't Work' Syndrome. Replaces design opinions with objective human cognitive laws.",
         studyDays: {
             hours: 20,
@@ -23,7 +23,7 @@ const roadmapData = [
         week: 2,
         title: "Nested Auto Layout & Fluid Constraints",
         course: "Figma Advanced Auto Layout & Responsive Systems",
-        courseUrl: "https://www.figma.com/resource-library/design-basics/",
+        courseUrl: "https://help.figma.com/hc/en-us/articles/360040451373-Guide-to-auto-layout",
         problemSolved: "Broken Responsiveness & Dev Friction. Replaces arbitrary resizing with rigid mathematical containers.",
         studyDays: {
             hours: 20,
@@ -38,7 +38,7 @@ const roadmapData = [
         week: 3,
         title: "Unbiased User Research & Insight Extraction",
         course: "User Research Methods and Frameworks (University of Michigan)",
-        courseUrl: "https://www.coursera.org/learn/user-research-methods",
+        courseUrl: "https://www.coursera.org/learn/understanding-user-needs",
         problemSolved: "Designing for Yourself, Not the User. Removes internal bias to unveil genuine user needs.",
         studyDays: {
             hours: 20,
@@ -53,7 +53,7 @@ const roadmapData = [
         week: 4,
         title: "Information Architecture & Navigation Mapping",
         course: "Information Architecture & UX Structures (CalArts)",
-        courseUrl: "https://www.coursera.org/learn/information-architecture-ux",
+        courseUrl: "https://www.coursera.org/learn/web-design-strategy",
         problemSolved: "User Getting Lost. Replaces disorganized lists with structured information taxonomy.",
         studyDays: {
             hours: 20,
@@ -68,7 +68,7 @@ const roadmapData = [
         week: 5,
         title: "Advanced Component Variables & Logic",
         course: "Figma Variables, Expressions & Advanced Prototyping",
-        courseUrl: "https://www.figma.com/resource-library/variables/",
+        courseUrl: "https://help.figma.com/hc/en-us/articles/14506587589399-Use-variables-in-prototypes",
         problemSolved: "Component Bloat & Maintenance Nightmares. Unifies elements through variables and variant properties.",
         studyDays: {
             hours: 20,
@@ -83,7 +83,7 @@ const roadmapData = [
         week: 6,
         title: "Micro-interactions & Motion Mechanics",
         course: "Prototyping & Motion Design in Figma",
-        courseUrl: "https://www.figma.com/resource-library/prototyping/",
+        courseUrl: "https://help.figma.com/hc/en-us/sections/30880632542743-Figma-Design-for-beginners",
         problemSolved: "Static & Soulless Experiences. Connects pages through motion to preserve spatial context.",
         studyDays: {
             hours: 20,
@@ -98,7 +98,7 @@ const roadmapData = [
         week: 7,
         title: "Usability Metrics & Qualitative Test Moderation",
         course: "Usability Testing & Metrics (University of Michigan)",
-        courseUrl: "https://www.coursera.org/learn/usability-testing-ux-design",
+        courseUrl: "https://www.coursera.org/learn/evaluating-designs-with-users",
         problemSolved: "Guessing Success Metrics. Replaces qualitative guesses with clear benchmarks.",
         studyDays: {
             hours: 20,
@@ -113,7 +113,7 @@ const roadmapData = [
         week: 8,
         title: "Data-Driven Optimization & Iteration Funnels",
         course: "Quantitative User Experience Research (University of Michigan)",
-        courseUrl: "https://www.coursera.org/learn/quantitative-user-experience-research",
+        courseUrl: "https://www.coursera.org/learn/ux-research-at-scale?utm_source=umich&utm_medium=institutions&utm_campaign=michigan-online&utm_term=UX+Research+at+Scale%3A+Surveys%2C+Analytics%2C+Online+Testing&utm_content=website",
         problemSolved: "Blind Iterations. Uses live behavioral telemetry to steer design modifications.",
         studyDays: {
             hours: 20,
@@ -128,7 +128,7 @@ const roadmapData = [
         week: 9,
         title: "Scalable Design Systems & Semantic Tokens",
         course: "Creating & Organizing Design Systems in Figma",
-        courseUrl: "https://www.figma.com/resource-library/design-systems/",
+        courseUrl: "https://help.figma.com/hc/en-us/articles/15339657135383-Guide-to-variables-in-Figma",
         problemSolved: "Visual Inconsistency. Standardizes design language into a single source of truth.",
         studyDays: {
             hours: 20,
@@ -143,7 +143,7 @@ const roadmapData = [
         week: 10,
         title: "Dev Handoff & Accessibility Compliance",
         course: "Accessibility Fundamentals (Microsoft)",
-        courseUrl: "https://learn.microsoft.com/en-us/training/paths/accessibility-fundamentals/",
+        courseUrl: "https://www.coursera.org/learn/ux-design-in-practice-accessibility-and-collaboration",
         problemSolved: "Designs That Die in Dev. Ensures visual mockups match high-performance, accessible code.",
         studyDays: {
             hours: 20,
