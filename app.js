@@ -6,152 +6,152 @@
 const roadmapData = [
     {
         week: 1,
-        title: "Usability Heuristics & Interface Deconstruction",
-        course: "Usability Evaluation in UX Design (University of Michigan)",
-        courseUrl: "https://www.coursera.org/learn/usability-evaluation-ux-design",
-        problemSolved: "The 'Looks Nice But Doesn't Work' Syndrome. Replaces design opinions with objective human cognitive laws.",
+        title: "Foundations of User Experience (UX) Design",
+        course: "Foundations of User Experience (UX) Design (Google)",
+        courseUrl: "https://www.coursera.org/learn/foundations-user-experience-design1",
+        problemSolved: "The Structural Alignment Deficit: Eradicates unstructured ad-hoc design habits by establishing rigid industry frameworks, standardized terminology, and professional design thinking workflows.",
         studyDays: {
-            hours: 20,
-            description: "Deep dive into human cognitive processing limitations, mental models, visual processing patterns, and system feedback paradigms. Memorize and extract the mechanics behind Nielsen’s 10 Usability Heuristics."
+            hours: 24,
+            description: "Learn foundational user-centered design frameworks, equity-centered paradigms, design sprint workflows, and introductory user research methodologies."
         },
         doDays: {
-            hours: 22,
-            description: "Choose a highly broken, complex live platform. Conduct an industry-grade Heuristic Evaluation, mapping every single page interface against cognitive laws and writing a detailed violation severity brief."
+            hours: 24,
+            description: "Isolate a target platform for Project 1. Map out its architectural components and catalog its foundational structural issues in a systemized product breakdown sheet."
         }
     },
     {
         week: 2,
-        title: "Nested Auto Layout & Fluid Constraints",
-        course: "Figma Advanced Auto Layout & Responsive Systems",
-        courseUrl: "https://www.figma.com/resource-library/design-basics/",
-        problemSolved: "Broken Responsiveness & Dev Friction. Replaces arbitrary resizing with rigid mathematical containers.",
+        title: "Introduction to User Experience Principles and Processes",
+        course: "Introduction to User Experience Principles and Processes (University of Michigan)",
+        courseUrl: "https://www.coursera.org/learn/introtoux-principles-and-processes1",
+        problemSolved: "The \"Looks Good But Doesn't Work\" Syndrome: Strips away subjective personal styling opinions and replaces them with strict, proven cognitive constraints and Nielsen’s 10 Usability Heuristics.",
         studyDays: {
-            hours: 20,
-            description: "Master the Figma auto-layout engine, nested constraints, spatial grids (4px/8px), absolute positioning within layouts, min/max widths, and responsive text wrapping."
+            hours: 24,
+            description: "Analyze human visual and cognitive bandwidth caps, spatial processing mechanics, and system mental models. Study Nielsen's 10 Heuristics for system visibility, error prevention, and user freedom."
         },
         doDays: {
-            hours: 22,
-            description: "Take 3 highly complex web pages (e.g., Salesforce Dashboard, Airbnb Search, Slack UI). Deconstruct and rebuild them in Figma using a single master container with fluid auto-layout structures."
+            hours: 24,
+            description: "Run a complete Heuristic Evaluation on the Project 1 platform. Build a comprehensive spreadsheet logging and scoring every single system violation by severity scale (0–4)."
         }
     },
     {
         week: 3,
-        title: "Unbiased User Research & Insight Extraction",
-        course: "User Research Methods and Frameworks (University of Michigan)",
-        courseUrl: "https://www.coursera.org/learn/user-research-methods",
-        problemSolved: "Designing for Yourself, Not the User. Removes internal bias to unveil genuine user needs.",
+        title: "Understanding User Needs",
+        course: "Understanding User Needs (University of Michigan)",
+        courseUrl: "https://www.coursera.org/learn/understanding-user-needs1",
+        problemSolved: "Building Unverified Layout Concepts: Stops designers from guessing user behavior by introducing rigid qualitative interview scripting and objective demographic insight mapping.",
         studyDays: {
-            hours: 20,
-            description: "Learn non-leading interview techniques, open-ended question structures, user recruitment filters, cognitive bias in moderation, and ethnographic field study methods."
+            hours: 24,
+            description: "Study qualitative interview architectures, behavioral observation frameworks, and script formatting rules designed to remove leading bias."
         },
         doDays: {
-            hours: 22,
-            description: "Draft a user research protocol for a custom application concept. Conduct 3 semi-structured moderated interviews. Synthesize the raw audio/transcripts into a thematic affinity map and user persona."
+            hours: 24,
+            description: "Author an unbiased interview script for Project 1. Record and transcribe live test user runs, mapping the observations onto a digital Affinity Diagram to group real user behavioral bottlenecks."
         }
     },
     {
         week: 4,
-        title: "Information Architecture & Navigation Mapping",
-        course: "Information Architecture & UX Structures (CalArts)",
-        courseUrl: "https://www.coursera.org/learn/information-architecture-ux",
-        problemSolved: "User Getting Lost. Replaces disorganized lists with structured information taxonomy.",
+        title: "Web Design: Strategy and Information Architecture",
+        course: "Web Design: Strategy and Information Architecture (California Institute of the Arts)",
+        courseUrl: "https://www.coursera.org/learn/web-design-strategy1",
+        problemSolved: "The Disjointed Navigation Maze: Resolves chaotic drop-downs, unstructured page hierarchies, and orphaned user flows using analytical open/closed card sorting systems.",
         studyDays: {
-            hours: 20,
-            description: "Study mental categorization paradigms, card sorting theory (open vs. closed), tree testing methodologies, flat vs. deep navigation hierarchies, and user search patterns."
+            hours: 24,
+            description: "Deep dive into system data models, multi-level directory patterns, information hierarchies, and metric-based open/closed card sorting procedures."
         },
         doDays: {
-            hours: 22,
-            description: "Audit and restructure the navigation of a complex e-commerce or directory website. Deliver a revised site taxonomy tree, user task flows, and write a summary of a run closed tree test."
+            hours: 24,
+            description: "Set up a remote card-sorting testing array. Convert the structural data patterns into a high-level corporate Sitemap layout, detailing all logical conditional pathways for Project 1."
         }
     },
     {
         week: 5,
-        title: "Advanced Component Variables & Logic",
-        course: "Figma Variables, Expressions & Advanced Prototyping",
-        courseUrl: "https://www.figma.com/resource-library/variables/",
-        problemSolved: "Component Bloat & Maintenance Nightmares. Unifies elements through variables and variant properties.",
+        title: "UX Design: From Concept to Prototype",
+        course: "UX Design: From Concept to Prototype (University of Michigan)",
+        courseUrl: "https://www.coursera.org/learn/ux-design-concept-wireframe1",
+        problemSolved: "The Abstract Concept Bottle-neck: Standardizes the pipeline of translating loose user requirements into structured storyboards, spatial wireframes, and scalable interface scaffolding.",
         studyDays: {
-            hours: 20,
-            description: "Understand Figma design variables, modes (light/dark/spacing), component variants, component properties, text overrides, component swapping, and nested instance overrides."
+            hours: 24,
+            description: "Transition into Project 2. Study layout restriction modeling, rapid storyboarding workflows, low-fidelity wireframing mechanics, and interaction mapping syntax."
         },
         doDays: {
-            hours: 22,
-            description: "Build a scalable, production-grade text input field system. Consolidate default, hover, active, error, disabled, helper text, and left/right icon states into a single component using properties."
+            hours: 24,
+            description: "Draft complex \"Crazy Eights\" wireframe options. Convert the selected mobile layouts into a clear Low-Fidelity Interactive Flow, detailing structural paths and error conditions."
         }
     },
     {
         week: 6,
-        title: "Micro-interactions & Motion Mechanics",
-        course: "Prototyping & Motion Design in Figma",
-        courseUrl: "https://www.figma.com/resource-library/prototyping/",
-        problemSolved: "Static & Soulless Experiences. Connects pages through motion to preserve spatial context.",
+        title: "UX Design Fundamentals",
+        course: "UX Design Fundamentals (California Institute of the Arts)",
+        courseUrl: "https://www.coursera.org/learn/ux-design-fundamentals1",
+        problemSolved: "Static Component Rigidity: Addresses weak visual hierarchy and layout scaling failures across multi-device screens before high-fidelity visual production kicks off.",
         studyDays: {
-            hours: 20,
-            description: "Learn cognitive load of transition, timing functions (ease-in, ease-out, custom cubic-bezier), smart animate triggers, delay looping, dragging gestures, and choreographing multiple page elements."
+            hours: 24,
+            description: "Study composition hierarchy rules, type scales, relative spacing systems, multi-device screen breakpoints, and visual focus distribution grids."
         },
         doDays: {
-            hours: 22,
-            description: "Create an interactive application prototype featuring animated sidebar navigation, skeleton loading screens, success check animation, toast notifications, and slider controllers."
+            hours: 24,
+            description: "Elevate Project 2's mobile flows into functional visual compositions. Define clear UI patterns, set type hierarchies, and build an interactive flow mapping every interactive component state."
         }
     },
     {
         week: 7,
-        title: "Usability Metrics & Qualitative Test Moderation",
-        course: "Usability Testing & Metrics (University of Michigan)",
-        courseUrl: "https://www.coursera.org/learn/usability-testing-ux-design",
-        problemSolved: "Guessing Success Metrics. Replaces qualitative guesses with clear benchmarks.",
+        title: "Evaluating Designs with Users",
+        course: "Evaluating Designs with Users (University of Michigan)",
+        courseUrl: "https://www.coursera.org/learn/evaluating-designs-with-users1",
+        problemSolved: "Designer Bias & Blind Optimism: Forces a brutal confrontation with reality by deploying silent Think-Aloud moderation protocols that flag hidden human cognitive friction.",
         studyDays: {
-            hours: 20,
-            description: "Study the System Usability Scale (SUS), Single Ease Question (SEQ), Task Completion Rate (TCR), Time on Task (ToT), and error rates."
+            hours: 24,
+            description: "Transition to Project 3. Master professional test moderation techniques, silent user logging methods, and how to execute the Think-Aloud user testing protocol."
         },
         doDays: {
-            hours: 22,
-            description: "Run moderated usability tests on Week 6 prototype. Test 3 users, compute overall SUS score, map Task Completion Rates, and detail a task-by-task usability issue severity log."
+            hours: 24,
+            description: "Deploy the target transaction loop prototype for live usability reviews. Silently log and record 3 users attempting 5 distinct operational tasks without prompting or intervening."
         }
     },
     {
         week: 8,
-        title: "Data-Driven Optimization & Iteration Funnels",
-        course: "Quantitative User Experience Research (University of Michigan)",
-        courseUrl: "https://www.coursera.org/learn/quantitative-user-experience-research",
-        problemSolved: "Blind Iterations. Uses live behavioral telemetry to steer design modifications.",
+        title: "UX Research at Scale: Surveys, Analytics, Online Testing",
+        course: "UX Research at Scale: Surveys, Analytics, Online Testing (University of Michigan)",
+        courseUrl: "https://www.coursera.org/learn/ux-research-at-scale",
+        problemSolved: "The \"Guesswork\" Redesign Loop: Eliminates random visual tweaks by training the designer to analyze high-volume quantitative metrics, heatmaps, and systematic click-stream funnels.",
         studyDays: {
-            hours: 20,
-            description: "Study A/B testing principles, statistical significance, heatmaps, scrollmaps, user session recording analysis, conversion funnels, and click-through rates."
+            hours: 24,
+            description: "Study the metrics of big data UX. Master click-drop funnel tracking, non-response sampling variables, survey generation mathematics, and heatmap analytics processing."
         },
         doDays: {
-            hours: 22,
-            description: "Audit a live conversion funnel. Draft a detailed A/B test proposal: state the null/alternative hypotheses, design the wireframe variant, and map out the analytics event tracking schema."
+            hours: 24,
+            description: "Dissect the qualitative data from Week 7. Calculate precise Task Success Rates (%) and Time-on-Task averages. Run a targeted layout overhaul on the exact interface components causing operational delays."
         }
     },
     {
         week: 9,
-        title: "Scalable Design Systems & Semantic Tokens",
-        course: "Creating & Organizing Design Systems in Figma",
-        courseUrl: "https://www.figma.com/resource-library/design-systems/",
-        problemSolved: "Visual Inconsistency. Standardizes design language into a single source of truth.",
+        title: "Principles of UX/UI Design",
+        course: "Principles of UX/UI Design (Meta)",
+        courseUrl: "https://www.coursera.org/learn/principles-of-ux-ui-design",
+        problemSolved: "Systemic Visual Inconsistency: Unifies fragmented interface grids, spacing, typography tokens, and responsive multi-platform design principles into a predictable, clean asset environment.",
         studyDays: {
-            hours: 20,
-            description: "Study design system scaling, tokens hierarchy (global/primitive vs. semantic alias vs. component override), dark mode logic, multi-brand themes, and component governance."
+            hours: 24,
+            description: "Master core UI layout equations, responsive platform behavior standards, component layout systems, and primitive-to-semantic styling definitions."
         },
         doDays: {
-            hours: 20,
-            description: "Construct a complete design system for a mobile application including semantic variables, type scales, buttons, inputs, headers, and grid containers, featuring both Light and Dark mode variables."
+            hours: 24,
+            description: "Break down Project 3's optimized layout into a modular component kit. Re-architect all interface elements to adhere strictly to fixed geometric grids, unified token variables, and multi-device fluid rules."
         }
     },
     {
         week: 10,
-        title: "Dev Handoff & Accessibility Compliance",
-        course: "Accessibility Fundamentals (Microsoft)",
-        courseUrl: "https://learn.microsoft.com/en-us/training/paths/accessibility-fundamentals/",
-        problemSolved: "Designs That Die in Dev. Ensures visual mockups match high-performance, accessible code.",
+        title: "UX Design in Practice: Accessibility and Collaboration",
+        course: "UX Design in Practice: Accessibility and Collaboration (Microsoft)",
+        courseUrl: "https://www.coursera.org/learn/ux-design-in-practice-accessibility-and-collaboration",
+        problemSolved: "The Designer-Developer War: Eliminates production translation bottlenecks via strict WCAG 2.2 contrast checking, systematic developer specs, and accessibility documentation.",
         studyDays: {
-            hours: 20,
-            description: "Study Web Content Accessibility Guidelines (WCAG 2.2AA/AAA), color contrast formulas, keyboard focus state design, screen reader header hierarchy, aria roles, and redlining specifications."
+            hours: 24,
+            description: "Master WCAG 2.2 AA contrast formulas, desktop/mobile typography line-height scales, interactive touch target definitions, screen-reader focus orders, and engineering handoff documentation models."
         },
         doDays: {
-            hours: 20,
-            description: "Run accessibility audit on Week 9 system. Annotate Figma design with absolute dev specs: spacing tokens, font weights, component properties, border radii, and exact keyboard focus flows."
+            hours: 24,
+            description: "Annotate the entire file for a production engineering team. Provide comprehensive text focus tracks, layout parameter callouts, interactive element state definitions, and compile the 10-week lifecycle into an executive product presentation case study."
         }
     }
 ];
