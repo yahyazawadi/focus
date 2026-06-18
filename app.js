@@ -8,7 +8,7 @@ const roadmapData = [
         week: 1,
         title: "Usability Heuristics & Interface Deconstruction",
         course: "Usability Evaluation in UX Design (University of Michigan)",
-        courseUrl: "https://www.coursera.org/learn/introtoux-principles-and-processes",
+        courseUrl: "https://www.coursera.org/learn/usability-evaluation-ux-design",
         problemSolved: "The 'Looks Nice But Doesn't Work' Syndrome. Replaces design opinions with objective human cognitive laws.",
         studyDays: {
             hours: 20,
@@ -23,7 +23,7 @@ const roadmapData = [
         week: 2,
         title: "Nested Auto Layout & Fluid Constraints",
         course: "Figma Advanced Auto Layout & Responsive Systems",
-        courseUrl: "https://help.figma.com/hc/en-us/articles/360040451373-Guide-to-auto-layout",
+        courseUrl: "https://www.figma.com/resource-library/design-basics/",
         problemSolved: "Broken Responsiveness & Dev Friction. Replaces arbitrary resizing with rigid mathematical containers.",
         studyDays: {
             hours: 20,
@@ -38,7 +38,7 @@ const roadmapData = [
         week: 3,
         title: "Unbiased User Research & Insight Extraction",
         course: "User Research Methods and Frameworks (University of Michigan)",
-        courseUrl: "https://www.coursera.org/learn/understanding-user-needs",
+        courseUrl: "https://www.coursera.org/learn/user-research-methods",
         problemSolved: "Designing for Yourself, Not the User. Removes internal bias to unveil genuine user needs.",
         studyDays: {
             hours: 20,
@@ -53,7 +53,7 @@ const roadmapData = [
         week: 4,
         title: "Information Architecture & Navigation Mapping",
         course: "Information Architecture & UX Structures (CalArts)",
-        courseUrl: "https://www.coursera.org/learn/web-design-strategy",
+        courseUrl: "https://www.coursera.org/learn/information-architecture-ux",
         problemSolved: "User Getting Lost. Replaces disorganized lists with structured information taxonomy.",
         studyDays: {
             hours: 20,
@@ -68,7 +68,7 @@ const roadmapData = [
         week: 5,
         title: "Advanced Component Variables & Logic",
         course: "Figma Variables, Expressions & Advanced Prototyping",
-        courseUrl: "https://help.figma.com/hc/en-us/articles/14506587589399-Use-variables-in-prototypes",
+        courseUrl: "https://www.figma.com/resource-library/variables/",
         problemSolved: "Component Bloat & Maintenance Nightmares. Unifies elements through variables and variant properties.",
         studyDays: {
             hours: 20,
@@ -83,7 +83,7 @@ const roadmapData = [
         week: 6,
         title: "Micro-interactions & Motion Mechanics",
         course: "Prototyping & Motion Design in Figma",
-        courseUrl: "https://help.figma.com/hc/en-us/sections/30880632542743-Figma-Design-for-beginners",
+        courseUrl: "https://www.figma.com/resource-library/prototyping/",
         problemSolved: "Static & Soulless Experiences. Connects pages through motion to preserve spatial context.",
         studyDays: {
             hours: 20,
@@ -98,7 +98,7 @@ const roadmapData = [
         week: 7,
         title: "Usability Metrics & Qualitative Test Moderation",
         course: "Usability Testing & Metrics (University of Michigan)",
-        courseUrl: "https://www.coursera.org/learn/evaluating-designs-with-users",
+        courseUrl: "https://www.coursera.org/learn/usability-testing-ux-design",
         problemSolved: "Guessing Success Metrics. Replaces qualitative guesses with clear benchmarks.",
         studyDays: {
             hours: 20,
@@ -113,7 +113,7 @@ const roadmapData = [
         week: 8,
         title: "Data-Driven Optimization & Iteration Funnels",
         course: "Quantitative User Experience Research (University of Michigan)",
-        courseUrl: "https://www.coursera.org/learn/ux-research-at-scale?utm_source=umich&utm_medium=institutions&utm_campaign=michigan-online&utm_term=UX+Research+at+Scale%3A+Surveys%2C+Analytics%2C+Online+Testing&utm_content=website",
+        courseUrl: "https://www.coursera.org/learn/quantitative-user-experience-research",
         problemSolved: "Blind Iterations. Uses live behavioral telemetry to steer design modifications.",
         studyDays: {
             hours: 20,
@@ -128,7 +128,7 @@ const roadmapData = [
         week: 9,
         title: "Scalable Design Systems & Semantic Tokens",
         course: "Creating & Organizing Design Systems in Figma",
-        courseUrl: "https://help.figma.com/hc/en-us/articles/15339657135383-Guide-to-variables-in-Figma",
+        courseUrl: "https://www.figma.com/resource-library/design-systems/",
         problemSolved: "Visual Inconsistency. Standardizes design language into a single source of truth.",
         studyDays: {
             hours: 20,
@@ -143,7 +143,7 @@ const roadmapData = [
         week: 10,
         title: "Dev Handoff & Accessibility Compliance",
         course: "Accessibility Fundamentals (Microsoft)",
-        courseUrl: "https://www.coursera.org/learn/ux-design-in-practice-accessibility-and-collaboration",
+        courseUrl: "https://learn.microsoft.com/en-us/training/paths/accessibility-fundamentals/",
         problemSolved: "Designs That Die in Dev. Ensures visual mockups match high-performance, accessible code.",
         studyDays: {
             hours: 20,
@@ -175,7 +175,7 @@ let state = {
     streakCount: 0,
     lastActiveDate: null,
     currentTheme: 'deep-space',
-    
+
     // Focus space state
     activeFocusTask: {
         id: null, // 'w1_study' or custom subtask ID
@@ -252,14 +252,14 @@ function playTimerFinishedSound() {
         osc.type = 'triangle';
         osc.frequency.setValueAtTime(880, now); // A5
         osc.frequency.setValueAtTime(1320, now + 0.15); // E6
-        
+
         gain.gain.setValueAtTime(0, now);
         gain.gain.linearRampToValueAtTime(0.15, now + 0.05);
         gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
-        
+
         osc.connect(gain);
         gain.connect(audioCtx.destination);
-        
+
         osc.start(now);
         osc.stop(now + 0.55);
     } catch (e) {
@@ -453,10 +453,10 @@ function loadFromLocalStorage() {
             console.error('Error reading localStorage', e);
         }
     }
-    
+
     // Check if the streak is still valid before rendering
     checkStreakValidity();
-    
+
     // Apply theme on load
     document.documentElement.setAttribute('data-theme', state.currentTheme);
     document.getElementById('theme-select').value = state.currentTheme;
@@ -467,13 +467,13 @@ function loadFromLocalStorage() {
 function triggerConfetti(x, y) {
     const canvas = document.getElementById('confetti-canvas');
     const ctx = canvas.getContext('2d');
-    
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    
+
     const particles = [];
     const colors = ['#8b5cf6', '#06b6d4', '#10b981', '#ec4899', '#f59e0b'];
-    
+
     // Spawn 65 particles
     for (let i = 0; i < 65; i++) {
         particles.push({
@@ -488,12 +488,12 @@ function triggerConfetti(x, y) {
             opacity: 1
         });
     }
-    
+
     let animationId;
     function renderFrame() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         let hasActiveParticles = false;
-        
+
         particles.forEach(p => {
             p.x += p.vx;
             p.y += p.vy;
@@ -501,7 +501,7 @@ function triggerConfetti(x, y) {
             p.vx *= 0.98; // Friction
             p.rotation += p.rotationSpeed;
             p.opacity -= 0.016; // Fade out rate
-            
+
             if (p.opacity > 0) {
                 hasActiveParticles = true;
                 ctx.save();
@@ -513,7 +513,7 @@ function triggerConfetti(x, y) {
                 ctx.restore();
             }
         });
-        
+
         if (hasActiveParticles) {
             animationId = requestAnimationFrame(renderFrame);
         } else {
@@ -529,14 +529,14 @@ function showToast(message, type = 'info') {
     const container = document.getElementById('toast-container');
     const toast = document.createElement('div');
     toast.className = `toast toast-${type}`;
-    
+
     let icon = '⚡';
     if (type === 'success') icon = '🏆';
     if (type === 'info') icon = 'ℹ️';
-    
+
     toast.innerHTML = `<span class="toast-icon">${icon}</span><span class="toast-message">${message}</span>`;
     container.appendChild(toast);
-    
+
     // Auto-remove after animation
     setTimeout(() => {
         toast.remove();
@@ -547,36 +547,36 @@ function showToast(message, type = 'info') {
 function generateRoadmapUI(filter = 'all') {
     const container = document.getElementById('weeks-container');
     container.innerHTML = '';
-    
+
     roadmapData.forEach(item => {
         const weekNum = item.week;
         const studyId = `w${weekNum}_study`;
         const doId = `w${weekNum}_do`;
-        
+
         const isStudyDone = state.checkedTasks[studyId] === true;
         const isDoDone = state.checkedTasks[doId] === true;
-        
+
         // Calculate progress completion details
         const customList = state.customSubtasks[`w${weekNum}`] || [];
         const customTotal = customList.length;
         const customDone = customList.filter(t => t.completed).length;
-        
+
         const totalMilestones = 2 + customTotal;
         const doneMilestones = (isStudyDone ? 1 : 0) + (isDoDone ? 1 : 0) + customDone;
         const percent = totalMilestones > 0 ? Math.round((doneMilestones / totalMilestones) * 100) : 0;
-        
+
         // Filter verification
         if (filter === 'completed' && percent < 100) return;
         if (filter === 'pending' && percent === 100) return;
-        
+
         // Build card HTML
         const card = document.createElement('div');
         card.className = `week-card ${percent === 100 ? 'week-completed' : ''}`;
         card.id = `week-card-${weekNum}`;
-        
+
         // SVG circle dashoffset computation: circumference = 2 * PI * r = 125.66
         const strokeOffset = 125.66 - (125.66 * percent) / 100;
-        
+
         // Custom subtasks HTML
         let subtasksListHtml = '';
         customList.forEach(sub => {
@@ -593,7 +593,7 @@ function generateRoadmapUI(filter = 'all') {
                 </div>
             `;
         });
-        
+
         card.innerHTML = `
             <div class="week-header" data-week="${weekNum}">
                 <span class="week-badge">Week ${weekNum}</span>
@@ -655,7 +655,7 @@ function generateRoadmapUI(filter = 'all') {
                             </div>
                             
                             <div class="task-footer-controls">
-                                <button class="btn-task-action ${state.activeFocusTask.id === studyId ? 'active-focus-task' : ''}" data-action="focus" data-task-id="${studyId}" data-title="W${weekNum} Study: ${item.title}" data-desc="${item.studyDays.description.substring(0,80)}...">
+                                <button class="btn-task-action ${state.activeFocusTask.id === studyId ? 'active-focus-task' : ''}" data-action="focus" data-task-id="${studyId}" data-title="W${weekNum} Study: ${item.title}" data-desc="${item.studyDays.description.substring(0, 80)}...">
                                     🎯 Focus Task
                                 </button>
                                 <button class="btn-task-action" data-action="notes" data-task-id="${studyId}">
@@ -686,7 +686,7 @@ function generateRoadmapUI(filter = 'all') {
                             </div>
                             
                             <div class="task-footer-controls">
-                                <button class="btn-task-action ${state.activeFocusTask.id === doId ? 'active-focus-task' : ''}" data-action="focus" data-task-id="${doId}" data-title="W${weekNum} Practice: ${item.title}" data-desc="${item.doDays.description.substring(0,80)}...">
+                                <button class="btn-task-action ${state.activeFocusTask.id === doId ? 'active-focus-task' : ''}" data-action="focus" data-task-id="${doId}" data-title="W${weekNum} Practice: ${item.title}" data-desc="${item.doDays.description.substring(0, 80)}...">
                                     🎯 Focus Task
                                 </button>
                                 <button class="btn-task-action" data-action="notes" data-task-id="${doId}">
@@ -717,7 +717,7 @@ function generateRoadmapUI(filter = 'all') {
                 </div>
             </div>
         `;
-        
+
         container.appendChild(card);
     });
 }
@@ -726,7 +726,7 @@ function generateRoadmapUI(filter = 'all') {
 function toggleWeekAccordion(weekNum) {
     const card = document.getElementById(`week-card-${weekNum}`);
     const body = document.getElementById(`week-body-${weekNum}`);
-    
+
     if (card.classList.contains('expanded')) {
         card.classList.remove('expanded');
         body.style.maxHeight = '0';
@@ -736,7 +736,7 @@ function toggleWeekAccordion(weekNum) {
             c.classList.remove('expanded');
             c.querySelector('.week-body').style.maxHeight = '0';
         });
-        
+
         card.classList.add('expanded');
         body.style.maxHeight = body.scrollHeight + 'px';
     }
@@ -746,29 +746,29 @@ function updateWeekPercentage(weekNum) {
     const item = roadmapData.find(d => d.week === weekNum);
     const studyId = `w${weekNum}_study`;
     const doId = `w${weekNum}_do`;
-    
+
     const isStudyDone = state.checkedTasks[studyId] === true;
     const isDoDone = state.checkedTasks[doId] === true;
-    
+
     const customList = state.customSubtasks[`w${weekNum}`] || [];
     const customTotal = customList.length;
     const customDone = customList.filter(t => t.completed).length;
-    
+
     const totalMilestones = 2 + customTotal;
     const doneMilestones = (isStudyDone ? 1 : 0) + (isDoDone ? 1 : 0) + customDone;
     const percent = totalMilestones > 0 ? Math.round((doneMilestones / totalMilestones) * 100) : 0;
-    
+
     // Update SVG circle
     const fillCircle = document.getElementById(`circle-fill-${weekNum}`);
     const textVal = document.getElementById(`week-progress-val-${weekNum}`);
     const card = document.getElementById(`week-card-${weekNum}`);
-    
+
     if (fillCircle && textVal) {
         const strokeOffset = 125.66 - (125.66 * percent) / 100;
         fillCircle.style.strokeDashoffset = strokeOffset;
         textVal.textContent = `${percent}%`;
     }
-    
+
     if (card) {
         if (percent === 100) {
             card.classList.add('week-completed');
@@ -776,25 +776,25 @@ function updateWeekPercentage(weekNum) {
             card.classList.remove('week-completed');
         }
     }
-    
+
     updateOverallStats();
 }
 
 function getElapsedWorkdayHours(today) {
     const start = new Date('2026-06-20T00:00:00');
     const end = new Date('2026-08-31T23:59:59');
-    
+
     // Clear times for clean calendar date comparisons
     const startClean = new Date(start.getFullYear(), start.getMonth(), start.getDate());
     const endClean = new Date(end.getFullYear(), end.getMonth(), end.getDate());
     const todayClean = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-    
+
     if (todayClean < startClean) return 0;
     if (todayClean > endClean) return 416;
-    
+
     let elapsedWorkdays = 0;
     let current = new Date(startClean);
-    
+
     while (current < todayClean) {
         const dayOfWeek = current.getDay(); // 0 = Sunday, 1 = Monday, ..., 5 = Friday, 6 = Saturday
         if (dayOfWeek !== 5 && dayOfWeek !== 6) { // Not Friday, not Saturday
@@ -802,7 +802,7 @@ function getElapsedWorkdayHours(today) {
         }
         current.setDate(current.getDate() + 1);
     }
-    
+
     return Math.min(416, elapsedWorkdays * 8);
 }
 
@@ -810,11 +810,11 @@ function updateOverallStats() {
     let totalEstimatedHours = 416; // Fixed total training hours
     let completedTasksCount = 0;
     let totalTasksCount = 20; // 2 per week * 10 weeks
-    
+
     roadmapData.forEach(item => {
         const studyDone = state.checkedTasks[`w${item.week}_study`] === true;
         const doDone = state.checkedTasks[`w${item.week}_do`] === true;
-        
+
         if (studyDone) {
             completedTasksCount++;
         }
@@ -822,7 +822,7 @@ function updateOverallStats() {
             completedTasksCount++;
         }
     });
-    
+
     // Add custom subtasks stats
     let totalCustom = 0;
     let completedCustom = 0;
@@ -830,23 +830,23 @@ function updateOverallStats() {
         totalCustom += list.length;
         completedCustom += list.filter(t => t.completed).length;
     });
-    
+
     const overallPercentage = Math.round((completedTasksCount / totalTasksCount) * 100);
-    
+
     // Calculate elapsed real-time training hours
     const elapsedHours = getElapsedWorkdayHours(new Date());
-    
+
     // Update Sidebar Elements
     document.getElementById('overall-percentage').textContent = `${overallPercentage}%`;
     document.getElementById('overall-progress-fill').style.width = `${overallPercentage}%`;
     document.getElementById('completed-hours-text').textContent = `${elapsedHours} / ${totalEstimatedHours} Hours`;
     document.getElementById('completed-tasks-text').textContent = `${completedTasksCount} / ${totalTasksCount} Tasks`;
-    
+
     // Update Stats Tab Elements
     document.getElementById('stats-total-hours').textContent = `${elapsedHours} Hours`;
     document.getElementById('stats-completion-rate').textContent = `${overallPercentage}%`;
     document.getElementById('stats-custom-completed').textContent = `${completedCustom} Tasks`;
-    
+
     // Calculate weeks completely finished (100%)
     let weeksUnlockedCount = 0;
     roadmapData.forEach(item => {
@@ -855,25 +855,25 @@ function updateOverallStats() {
         const d = state.checkedTasks[`w${w}_do`] === true;
         const custom = state.customSubtasks[`w${w}`] || [];
         const customAllDone = custom.every(t => t.completed);
-        
+
         if (s && d && customAllDone) {
             weeksUnlockedCount++;
         }
     });
     document.getElementById('stats-weeks-unlocked').textContent = `${weeksUnlockedCount} / 10`;
-    
+
     // Refresh Stats Completed Log
     generateCompletedLog();
 }
 
 function checkStreakValidity() {
     if (state.lastActiveDate === null) return;
-    
+
     const today = new Date().toDateString();
     const yesterday = new Date();
     yesterday.setDate(yesterday.getDate() - 1);
     const yesterdayStr = yesterday.toDateString();
-    
+
     // If the last active date is neither today nor yesterday, they missed a day; reset streak.
     if (state.lastActiveDate !== today && state.lastActiveDate !== yesterdayStr) {
         state.streakCount = 0;
@@ -884,7 +884,7 @@ function checkStreakValidity() {
 
 function updateStreakDate() {
     const today = new Date().toDateString();
-    
+
     if (state.lastActiveDate === null) {
         state.streakCount = 1;
         state.lastActiveDate = today;
@@ -892,7 +892,7 @@ function updateStreakDate() {
         const yesterday = new Date();
         yesterday.setDate(yesterday.getDate() - 1);
         const yesterdayStr = yesterday.toDateString();
-        
+
         if (state.lastActiveDate === yesterdayStr) {
             state.streakCount += 1;
             state.lastActiveDate = today;
@@ -904,7 +904,7 @@ function updateStreakDate() {
             state.lastActiveDate = today;
         }
     }
-    
+
     updateStreakDisplay();
     saveToLocalStorage();
 }
@@ -920,13 +920,13 @@ function updateStreakDisplay() {
 function generateCompletedLog() {
     const logList = document.getElementById('completed-log-list');
     logList.innerHTML = '';
-    
+
     let itemsAdded = 0;
-    
+
     roadmapData.forEach(item => {
         const studyId = `w${item.week}_study`;
         const doId = `w${item.week}_do`;
-        
+
         if (state.checkedTasks[studyId]) {
             addLogItem(logList, `Study: ${item.title}`, `Week ${item.week}`, `${item.studyDays.hours} Hours`);
             itemsAdded++;
@@ -936,7 +936,7 @@ function generateCompletedLog() {
             itemsAdded++;
         }
     });
-    
+
     // Custom subtasks completed log
     Object.keys(state.customSubtasks).forEach(weekKey => {
         const weekNum = weekKey.substring(1);
@@ -948,7 +948,7 @@ function generateCompletedLog() {
             }
         });
     });
-    
+
     if (itemsAdded === 0) {
         logList.innerHTML = `
             <div class="empty-log-state">
@@ -974,42 +974,42 @@ function addLogItem(container, title, weekDesc, badgeText) {
 // --- TIMER FUNCTIONALITY ---
 function startTimer() {
     if (state.timer.isRunning) return;
-    
+
     initAudio();
     if (audioCtx.state === 'suspended') audioCtx.resume();
-    
+
     state.timer.isRunning = true;
     document.getElementById('timer-play-pause').innerHTML = '<span>⏸</span>';
     document.getElementById('focus-active-badge').style.display = 'block';
-    
+
     const durationMs = (state.timer.minutesRemaining * 60 + state.timer.secondsRemaining) * 1000;
     state.timer.endTime = Date.now() + durationMs;
-    
+
     state.timer.timerInterval = setInterval(() => {
         const msRemaining = Math.max(0, state.timer.endTime - Date.now());
         const totalSeconds = Math.round(msRemaining / 1000);
-        
+
         state.timer.minutesRemaining = Math.floor(totalSeconds / 60);
         state.timer.secondsRemaining = totalSeconds % 60;
-        
+
         updateTimerDisplay();
-        
+
         if (totalSeconds <= 0) {
             timerFinished();
         }
     }, 200);
-    
+
     showToast('Focus session started! Deep focus mode active.', 'info');
 }
 
 function pauseTimer() {
     if (!state.timer.isRunning) return;
-    
+
     state.timer.isRunning = false;
     clearInterval(state.timer.timerInterval);
     document.getElementById('timer-play-pause').innerHTML = '<span>▶</span>';
     document.getElementById('focus-active-badge').style.display = 'none';
-    
+
     showToast('Focus timer paused.', 'info');
 }
 
@@ -1023,14 +1023,14 @@ function resetTimer() {
 function timerFinished() {
     pauseTimer();
     playTimerFinishedSound();
-    
+
     if (state.timer.mode === 'focus') {
         showToast('Great job! Focus session completed. Take a break!', 'success');
-        
+
         // Auto mark active focus task as completed if applicable
         if (state.activeFocusTask.id) {
             const taskId = state.activeFocusTask.id;
-            
+
             // Is it a default task or custom subtask?
             if (taskId.startsWith('w')) {
                 state.checkedTasks[taskId] = true;
@@ -1038,7 +1038,7 @@ function timerFinished() {
                 if (checkbox) checkbox.checked = true;
                 const card = document.getElementById(`card-${taskId}`);
                 if (card) card.classList.add('task-completed');
-                
+
                 const wNum = parseInt(taskId.split('_')[0].substring(1));
                 updateWeekPercentage(wNum);
             } else {
@@ -1052,7 +1052,7 @@ function timerFinished() {
                         if (subCheckbox) subCheckbox.checked = true;
                         const subCard = document.getElementById(`subtask-container-${taskId}`);
                         if (subCard) subCard.classList.add('subtask-completed');
-                        
+
                         const wNum = parseInt(weekKey.substring(1));
                         updateWeekPercentage(wNum);
                     }
@@ -1062,7 +1062,7 @@ function timerFinished() {
             updateStreakDate();
             saveToLocalStorage();
         }
-        
+
         // Switch to short break preset automatically
         setTimerPreset(5, 'break');
     } else {
@@ -1077,7 +1077,7 @@ function setTimerPreset(minutes, mode) {
     state.timer.minutesRemaining = minutes;
     state.timer.secondsRemaining = 0;
     state.timer.mode = mode;
-    
+
     // Update visual preset state
     document.querySelectorAll('.preset-btn').forEach(btn => {
         btn.classList.remove('active');
@@ -1085,27 +1085,27 @@ function setTimerPreset(minutes, mode) {
             btn.classList.add('active');
         }
     });
-    
+
     // Update theme clock tag
     const modeText = mode === 'focus' ? 'FOCUS SESSION' : 'RELAXATION BREAK';
     document.getElementById('timer-mode').textContent = modeText;
-    
+
     updateTimerDisplay();
 }
 
 function updateTimerDisplay() {
     const mins = String(state.timer.minutesRemaining).padStart(2, '0');
     const secs = String(state.timer.secondsRemaining).padStart(2, '0');
-    
+
     // Update text
     document.getElementById('timer-clock').textContent = `${mins}:${secs}`;
     document.title = `(${mins}:${secs}) UX APEX`;
-    
+
     // Update SVG stroke-dashoffset: circumference = 565.48
     const totalSeconds = state.timer.durationMinutes * 60;
     const currentSeconds = state.timer.minutesRemaining * 60 + state.timer.secondsRemaining;
     const progressPercent = totalSeconds > 0 ? currentSeconds / totalSeconds : 0;
-    
+
     const strokeDash = 565.48 * progressPercent;
     document.getElementById('timer-progress-fill').style.strokeDashoffset = 565.48 - strokeDash;
 }
@@ -1115,7 +1115,7 @@ function toggleBreathing() {
     const ring = document.getElementById('breathing-ring-element');
     const status = document.getElementById('breathing-status');
     const btn = document.getElementById('breathing-toggle');
-    
+
     if (state.breathing.isRunning) {
         // Stop breathing
         state.breathing.isRunning = false;
@@ -1129,12 +1129,12 @@ function toggleBreathing() {
         state.breathing.isRunning = true;
         btn.textContent = 'Stop Breathing Guide';
         btn.className = 'btn-secondary';
-        
+
         let cycle = 0; // 0: inhale, 1: hold, 2: exhale, 3: hold-out
-        
+
         function runBreathingCycle() {
             if (!state.breathing.isRunning) return;
-            
+
             if (cycle === 0) {
                 status.textContent = 'Inhale...';
                 ring.className = 'breathing-ring inhale';
@@ -1151,7 +1151,7 @@ function toggleBreathing() {
                 cycle = 0;
             }
         }
-        
+
         runBreathingCycle(); // immediate run
         state.breathing.intervalId = setInterval(runBreathingCycle, 3500); // 3.5s transition
     }
@@ -1161,18 +1161,18 @@ function updateTrainingCountdown() {
     const countdownText = document.getElementById('training-countdown-text');
     const badge = document.getElementById('training-days-badge');
     if (!countdownText || !badge) return;
-    
+
     const startDate = new Date('2026-06-20T00:00:00');
     const endDate = new Date('2026-08-31T23:59:59');
     const today = new Date();
-    
+
     // Clear time parts for clean day difference math
     const startClean = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
     const endClean = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate());
     const todayClean = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-    
+
     const oneDayMs = 24 * 60 * 60 * 1000;
-    
+
     if (todayClean < startClean) {
         const daysToStart = Math.round((startClean - todayClean) / oneDayMs);
         badge.textContent = `Starts Soon`;
@@ -1184,7 +1184,7 @@ function updateTrainingCountdown() {
         const totalDurationDays = Math.round((endClean - startClean) / oneDayMs) + 1;
         const elapsedDays = Math.round((todayClean - startClean) / oneDayMs) + 1;
         const remainingDays = totalDurationDays - elapsedDays;
-        
+
         badge.textContent = `Day ${elapsedDays} / ${totalDurationDays}`;
         countdownText.textContent = `🏁 ${remainingDays} ${remainingDays === 1 ? 'day' : 'days'} remaining (ends Aug 31)`;
     }
@@ -1192,37 +1192,37 @@ function updateTrainingCountdown() {
 
 // --- DOM EVENT LISTENERS & INITS ---
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // 1. Initial State Loading
     loadFromLocalStorage();
     generateRoadmapUI();
     updateOverallStats();
     updateTrainingCountdown();
-    
+
     // Set random focus quote
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     document.getElementById('focus-quote').textContent = randomQuote.text;
     document.getElementById('focus-author').textContent = `— ${randomQuote.author}`;
-    
+
     // Set active focus task UI display
     document.getElementById('focus-active-title').textContent = state.activeFocusTask.title;
     document.getElementById('focus-active-description').textContent = state.activeFocusTask.desc;
-    
+
     // 2. Navigation Tab Click Handler
     document.querySelectorAll('.nav-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             const targetTab = btn.getAttribute('data-tab');
-            
+
             // Switch Menu state
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            
+
             // Switch Tab view visibility
             document.querySelectorAll('.tab-view').forEach(view => {
                 view.classList.remove('active-view');
             });
             document.getElementById(`tab-${targetTab}`).classList.add('active-view');
-            
+
             // Update Title
             const titlesMap = {
                 'roadmap': { title: 'Syllabus Roadmap', subtitle: 'Master UX Design in 10 Weeks & 480 Study/Practice Hours' },
@@ -1233,7 +1233,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('view-subtitle').textContent = titlesMap[targetTab].subtitle;
         });
     });
-    
+
     // 3. Quick Focus toggle in Header
     document.getElementById('start-focus-shortcut').addEventListener('click', () => {
         document.querySelector('[data-tab="focus"]').click();
@@ -1247,16 +1247,16 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleWeekAccordion(weekNum);
         }
     });
-    
+
     // 5. Checkboxes Change Event (Roadmap and Sub-tasks)
     document.getElementById('weeks-container').addEventListener('change', (e) => {
         // Handle Primary Task Checkbox
         if (e.target.classList.contains('task-checkbox')) {
             const taskId = e.target.getAttribute('data-task-id');
             const isChecked = e.target.checked;
-            
+
             state.checkedTasks[taskId] = isChecked;
-            
+
             const card = document.getElementById(`card-${taskId}`);
             if (isChecked) {
                 card.classList.add('task-completed');
@@ -1268,23 +1268,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.classList.remove('task-completed');
                 showToast('Milestone reset.', 'info');
             }
-            
+
             const weekNum = parseInt(taskId.split('_')[0].substring(1));
             updateWeekPercentage(weekNum);
             saveToLocalStorage();
         }
-        
+
         // Handle Custom Sub-task Checkbox
         if (e.target.classList.contains('subtask-checkbox')) {
             const weekNum = parseInt(e.target.getAttribute('data-week'));
             const subtaskId = e.target.getAttribute('data-subtask-id');
             const isChecked = e.target.checked;
-            
+
             const subList = state.customSubtasks[`w${weekNum}`] || [];
             const index = subList.findIndex(t => t.id == subtaskId);
             if (index > -1) {
                 subList[index].completed = isChecked;
-                
+
                 const container = document.getElementById(`subtask-container-${subtaskId}`);
                 if (isChecked) {
                     container.classList.add('subtask-completed');
@@ -1294,60 +1294,60 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     container.classList.remove('subtask-completed');
                 }
-                
+
                 updateWeekPercentage(weekNum);
                 saveToLocalStorage();
             }
         }
     });
-    
+
     // 6. Action button inside roadmap cards (Focus Task and Notes Expand)
     document.getElementById('weeks-container').addEventListener('click', (e) => {
         const btn = e.target.closest('.btn-task-action');
         if (!btn) return;
-        
+
         const action = btn.getAttribute('data-action');
         const taskId = btn.getAttribute('data-task-id');
-        
+
         if (action === 'notes') {
             const notesDiv = document.getElementById(`notes-container-${taskId}`);
             notesDiv.classList.toggle('visible');
-            
+
             // Adjust card height in accordion
             const weekCard = btn.closest('.week-card');
             const weekNum = weekCard.querySelector('.week-header').getAttribute('data-week');
             const body = document.getElementById(`week-body-${weekNum}`);
             body.style.maxHeight = body.scrollHeight + 150 + 'px';
         }
-        
+
         if (action === 'focus') {
             const taskTitle = btn.getAttribute('data-title');
             const taskDesc = btn.getAttribute('data-desc');
-            
+
             state.activeFocusTask = {
                 id: taskId,
                 title: taskTitle,
                 desc: taskDesc
             };
-            
+
             // Highlight active focus button visually across timeline
             document.querySelectorAll('[data-action="focus"]').forEach(b => {
                 b.classList.remove('active-focus-task');
             });
             btn.classList.add('active-focus-task');
-            
+
             // Update Focus Studio elements
             document.getElementById('focus-active-title').textContent = taskTitle;
             document.getElementById('focus-active-description').textContent = taskDesc;
-            
+
             saveToLocalStorage();
-            
+
             // Route user directly to Focus view
             document.querySelector('[data-tab="focus"]').click();
             showToast(`Task locked: '${taskTitle}' is now loaded in Focus Studio!`, 'success');
         }
     });
-    
+
     // 7. Save Note on text-area edits
     document.getElementById('weeks-container').addEventListener('input', (e) => {
         if (e.target.classList.contains('notes-textarea')) {
@@ -1356,7 +1356,7 @@ document.addEventListener('DOMContentLoaded', () => {
             saveToLocalStorage();
         }
     });
-    
+
     // 8. Custom Sandbox Sub-task creation forms
     document.getElementById('weeks-container').addEventListener('submit', (e) => {
         if (e.target.classList.contains('add-subtask-form')) {
@@ -1364,56 +1364,56 @@ document.addEventListener('DOMContentLoaded', () => {
             const weekNum = parseInt(e.target.getAttribute('data-week'));
             const input = document.getElementById(`subtask-input-${weekNum}`);
             const text = input.value.trim();
-            
+
             if (text) {
                 const subId = 'sub_' + Date.now() + '_' + Math.floor(Math.random() * 1000);
-                
+
                 if (!state.customSubtasks[`w${weekNum}`]) {
                     state.customSubtasks[`w${weekNum}`] = [];
                 }
-                
+
                 state.customSubtasks[`w${weekNum}`].push({
                     id: subId,
                     text: text,
                     completed: false
                 });
-                
+
                 input.value = '';
                 saveToLocalStorage();
-                
+
                 // Re-render Roadmap card list dynamically without collapsing layout
                 generateRoadmapUI();
-                
+
                 // Keep Accordion Card expanded
                 const card = document.getElementById(`week-card-${weekNum}`);
                 card.classList.add('expanded');
                 const body = document.getElementById(`week-body-${weekNum}`);
                 body.style.maxHeight = body.scrollHeight + 'px';
-                
+
                 updateWeekPercentage(weekNum);
                 showToast('Custom goal added to roadmap sandbox.', 'success');
             }
         }
     });
-    
+
     // Delete custom sub-task handler
     document.getElementById('weeks-container').addEventListener('click', (e) => {
         if (e.target.classList.contains('btn-delete-subtask')) {
             const weekNum = parseInt(e.target.getAttribute('data-week'));
             const subtaskId = e.target.getAttribute('data-subtask-id');
-            
+
             const list = state.customSubtasks[`w${weekNum}`] || [];
             state.customSubtasks[`w${weekNum}`] = list.filter(item => item.id != subtaskId);
-            
+
             saveToLocalStorage();
             generateRoadmapUI();
-            
+
             // Restore expand state
             const card = document.getElementById(`week-card-${weekNum}`);
             card.classList.add('expanded');
             const body = document.getElementById(`week-body-${weekNum}`);
             body.style.maxHeight = body.scrollHeight + 'px';
-            
+
             updateWeekPercentage(weekNum);
             showToast('Goal removed.', 'info');
         }
@@ -1424,7 +1424,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            
+
             const filterType = btn.getAttribute('data-filter');
             generateRoadmapUI(filterType);
         });
@@ -1438,16 +1438,16 @@ document.addEventListener('DOMContentLoaded', () => {
             startTimer();
         }
     });
-    
+
     document.getElementById('timer-prev').addEventListener('click', () => {
         resetTimer();
         showToast('Timer block reset.', 'info');
     });
-    
+
     document.getElementById('timer-skip').addEventListener('click', () => {
         timerFinished();
     });
-    
+
     document.querySelectorAll('.preset-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             const mins = parseInt(btn.getAttribute('data-time'));
@@ -1460,25 +1460,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const rainToggle = document.getElementById('sound-rain-btn');
     const whiteToggle = document.getElementById('sound-white-btn');
     const wavesToggle = document.getElementById('sound-waves-btn');
-    
+
     rainToggle.addEventListener('click', () => {
         rainToggle.classList.toggle('playing');
         const isPlaying = rainToggle.classList.contains('playing');
         toggleRainSound(isPlaying);
     });
-    
+
     whiteToggle.addEventListener('click', () => {
         whiteToggle.classList.toggle('playing');
         const isPlaying = whiteToggle.classList.contains('playing');
         toggleWhiteNoise(isPlaying);
     });
-    
+
     wavesToggle.addEventListener('click', () => {
         wavesToggle.classList.toggle('playing');
         const isPlaying = wavesToggle.classList.contains('playing');
         toggleFocusHum(isPlaying);
     });
-    
+
     // Volume adjustments live bindings
     document.getElementById('sound-rain-volume').addEventListener('input', (e) => {
         if (rainGain) {
@@ -1496,17 +1496,17 @@ document.addEventListener('DOMContentLoaded', () => {
             humGain.gain.value = parseFloat(e.target.value) * 0.12;
         }
     });
-    
+
     // Mute All Sounds Button
     document.getElementById('stop-all-sounds').addEventListener('click', () => {
         toggleRainSound(false);
         toggleWhiteNoise(false);
         toggleFocusHum(false);
-        
+
         rainToggle.classList.remove('playing');
         whiteToggle.classList.remove('playing');
         wavesToggle.classList.remove('playing');
-        
+
         showToast('All background sounds silenced.', 'info');
     });
 
@@ -1519,7 +1519,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('reset-data-btn').addEventListener('click', () => {
         if (confirm('Are you absolutely sure you want to clear your roadmap data? This will reset all task checkmarks, notes, and streak count.')) {
             localStorage.removeItem('ux_apex_state');
-            
+
             // Reset local variables
             state.checkedTasks = {};
             state.customSubtasks = {};
@@ -1531,19 +1531,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 title: 'No Task Selected',
                 desc: 'Select a task checklist item from the roadmap to focus on it here.'
             };
-            
+
             // Reapply layout
             generateRoadmapUI();
             updateOverallStats();
             updateStreakDisplay();
-            
+
             document.getElementById('focus-active-title').textContent = state.activeFocusTask.title;
             document.getElementById('focus-active-description').textContent = state.activeFocusTask.desc;
-            
+
             showToast('All progress data cleared successfully.', 'success');
         }
     });
-    
+
     document.getElementById('export-data-btn').addEventListener('click', () => {
         const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(localStorage.getItem('ux_apex_state'));
         const downloadAnchor = document.createElement('a');
@@ -1554,7 +1554,7 @@ document.addEventListener('DOMContentLoaded', () => {
         downloadAnchor.remove();
         showToast('Roadmap progress backup JSON exported!', 'success');
     });
-    
+
     // Theme dropdown listener
     document.getElementById('theme-select').addEventListener('change', (e) => {
         state.currentTheme = e.target.value;
